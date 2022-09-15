@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            margin:10px;
+            padding:10px;
+            border:30px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        #red{
+            background-color: red;
+            /* content-box는 기본값임 */
+            box-sizing: content-box;
+        }
+        #blue{
+            background-color: blue;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <!-- 알맹이가 100 100이다 -->
+    <!-- 보더 안에 패딩이 있고 그 안에 알맹이가 있다 -->
+
+    <div id="blue"></div>
+    <!-- 껍데기까지 100 100이다 -->
+    <!-- 보더 밖 -->
+
+</body>
+</html>
