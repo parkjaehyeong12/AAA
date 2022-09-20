@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = prompt('숫자 입력하기') //이때는 문자열
+        num %= 12 //이 때도 '문자열'
+        num++ 
+        num = Number(num) //이 때가 되야 숫자가 된다.       
+        console.log(num)
+
+        //결론: 입력받는 값은 기본저긍로 무자
+        //숫자로 쓰고 싶다면 별도의 처리가 필요하다
+
+        let test=20
+        if(test=='20')
+         console.log('==은 값을 비교')
+        if(test=='20')
+         console.log('타입도 비교함')
+
+        console.log(test=='20') //true
+        console.log(test==='20') //false
+
+        let mymonth=prompt('몇월생?')
+        document.querySelector('body').style.backgroundRepeat="no-repeat"
+       
+        //mymonth=Number(mymonth) 와 같은 처리가 필요없다
+        if(mymonth==12||mymonth==1||mymonth==2)
+        document.querySelector('body').background
+        ='https://previews.123rf.com/images/rvika/rvika1110/rvika111000022/10936749-%EA%B2%A8%EC%9A%B8-%ED%92%8D%EA%B2%BD.jpg'
+
+        else if(mymonth>=3 && mymonth<=5)
+        document.querySelector('body').background
+        ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuSFlzDUM5EK7DMpvSejbadTx9pBxwJboww&usqp=CAU'
+        
+        else if(mymonth>=6 && mymonth<=8)
+        document.querySelector('body').background
+        ='https://t1.daumcdn.net/cfile/tistory/220E5C41557200B223'
+
+        else if(mymonth>=9 && mymonth<=11)
+        document.querySelector('body').background
+        ='http://img2.sbs.co.kr/img/seditor/VD/2022/09/07/ZUV1662524487580-640-0.jpg'
+        
+        else
+        document.querySelector('body').background
+        ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuqn-daXezLHaY2etVxuOh28Vx_xI5SXz_Wg&usqp=CAU'
+    </script>
+</body>
+</html>
