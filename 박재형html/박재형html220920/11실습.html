@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="s">가위</button>
+    <button id="r">바위</button>
+    <button id="p">보</button>
+
+    <h1></h1>
+</body>
+<script>
+
+    let s = document.querySelector('#s')
+    let r = document.querySelector('#r')
+    let p = document.querySelector('#p')
+
+    let result = document.querySelector('h1')
+
+
+    const max = 3
+    const min = 0
+ // 
+
+    const result2 = Math.random() * (max - min) + min
+    console.log(Math.floor(result2))
+
+    let myhand
+
+    s.onclick = function () {
+        myhand = 0
+    }
+    r.onclick = function () {
+        myhand = 1
+    }
+    p.onclick = function () {
+        myhand = 2
+    }
+
+    myhand =Number(myhand)
+
+    if((myhand == 2 &&result2 == 0)||
+    (myhand == 1 && result2 ==2)||(myhand ==0 && result2 ==1) )
+    result.textContent = '패배'
+    else if((myhand == 2 && result==1)||
+    (myhand ==1 &&result2==0)||(myhand==0 &&result2==2))
+    result.textContent = '승리'
+    else
+    result.textContent ='무승부'
+
+</script>
+
+</html>
