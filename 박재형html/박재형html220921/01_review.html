@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 10
+        var b = 50
+        console.log(a+b)
+        a = '10'
+        console.log(a+b)
+
+        //따옴표 안에 따옴표, 쌍따 안에 쌍따만 된다.
+
+        let c='안녕하세요'
+        c='안녕, 내 이름은 "이동준"이야'
+        console.log(c)
+
+        c="안녕, 내 이름은 '이동준'이야"
+        console.log(c)
+
+        // c="안녕,"이동준"씨" 
+        // console.log(c) //안된다
+
+        // c='안녕,'이동준'씨'
+        // console.log(c) //ㄹㅇ 안된다
+
+        //이거 2개느 escape문자쓰기
+
+        c="안녕,\"박재형\"씨" 
+        console.log(c)
+        c='안녕,\'재형박\'씨'+" 너가 직관갔던 경기만 졌구나 ㅠㅠ"+" 잘생긴 서준이형이-"
+        console.log(c)
+
+    </script>
+</body>
+</html>

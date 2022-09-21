@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        //2
+        printDia(5,'pink')
+
+        //1 //3
+        function printDia(size,color) {
+            let output = ''
+            let SIZE = size
+            let COLOR=color
+            
+            for (let i = 1; i <= SIZE; i++) {
+                //스페이스
+                for (let j = SIZE; j > i; j--)
+                    output += '&nbsp'
+                for (let k = 0; k < 2 * i - 1; k++)
+                    output += '*'
+                output += '<br>'
+            }
+
+            for (let i = SIZE - 1; i > 0; i--) {
+                for (let j = SIZE; j > i; j--)
+                    output += '&nbsp'
+                for (let k = 0; k < 2 * i - 1; k++)
+                    output += '*'
+                output += '<br>'
+            }
+            let h1Tag = document.createElement('h1')
+            h1Tag.innerHTML=output
+
+            // document.querySelector('h1').style.color=COLOR
+            h1Tag.setAttribute('style','color:'+COLOR)
+
+            document.body.appendChild(h1Tag)
+        }
+
+        
+        let randomcolor=[red, green, pink, blue]
+
+        //4
+        printDia1(5)
+        function printDia1(size, randomcolor) {
+            let output = ''
+            let SIZE = size
+            let num = Math.floor(Math.random() * 4)
+            
+            for (let i = 1; i <= SIZE; i++) {
+                //스페이스
+                for (let j = SIZE; j > i; j--)
+                    output += '&nbsp'
+                for (let k = 0; k < 2 * i - 1; k++)
+                    output += '*'
+                output += '<br>'
+            }
+
+            for (let i = SIZE - 1; i > 0; i--) {
+                for (let j = SIZE; j > i; j--)
+                    output += '&nbsp'
+                for (let k = 0; k < 2 * i - 1; k++)
+                    output += '*'
+                output += '<br>'
+            }
+            let h1Tag = document.createElement('h1')
+            h1Tag.innerHTML=output
+
+            // document.querySelector('h1').style.color=COLOR
+            h1Tag.setAttribute('style','color:'+randomcolor[num])
+
+            document.body.appendChild(h1Tag)
+        }
+        
+
+    </script>
+</body>
+
+</html>

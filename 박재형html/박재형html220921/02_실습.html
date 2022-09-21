@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value=10>
+    <button id="button">결과확인</button>
+    <h1></h1>
+</body>
+<script>
+    let input = document.querySelector('input')
+    
+    let button = document.querySelector('#button')
+    let result = document.querySelector('h1')
+    
+
+    button.onclick = function () {
+         //초기화가 버튼 눌렀을 때 된다.
+        let num = input.value
+        if (num == 0)
+            result.textContent = '제로'
+        else if (num % 2 == 0)
+            result.textContent = '짝수'
+        else if (num % 2 == 1)
+            result.textContent = '홀수'
+        else
+            result.textContent = '기타' + num
+    }
+
+</script>
+
+</html>
