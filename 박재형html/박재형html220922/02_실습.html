@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="02_mincho.json"></script>
+    <script>
+        //window:document보다 더 상위 계층
+        //우리가 보는 창(웹브라우저)의미함
+        //window.onload=function(){}의 의미:
+        //바디태그에 있는 것 다 불러들인 다음에 실행하겠다.
+
+        window.onload = function () {
+            let btn = document.querySelector('button')
+            let mylunch = document.querySelector('img')
+            let result = document.querySelector('#result')
+            
+            let 국수={
+                이름:'국수',
+                사진:'https://thingool123.godohosting.com/data/goods/editor/211129/2_153631.jpg'
+            }
+            let 햄버거={
+                이름:'햄버거',
+                사진:'https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201412/08/htm_20141208135901788.jpg'
+            }
+            let 샌드위치={
+                이름:'샌드위치',
+                사진:'https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/rs_quotation_api/d8kfo1xz/27c261876531462d9cae14697fa9667b.png'
+            }
+            
+            let lunch=[국수, 햄버거, 샌드위치,,민초]
+            lunch[3]={
+                이름:'하와이안 피자',
+                사진:'http://ojsfile.ohmynews.com/STD_IMG_FILE/2020/1104/IE002715486_STD.jpg'
+            }
+            // lunch[4]=민초
+            
+            btn.textContent = '점심선택'
+            mylunch.width = 0
+            mylunch.height = 0
+            mylunch.style.display = 'block'
+            
+            let idx1 = -1
+
+            btn.onclick = () => {
+                mylunch.width = 300
+                mylunch.height = 300
+                mylunch.src = ''
+                result.textContent = ''
+                let idx = Math.floor(Math.random() * lunch.length)
+                //배열길이
+                
+                // for(;idx1 == idx;)
+                // {
+                //     idx = Math.floor(Math.random() * lunch.length)
+                // }
+                while(idx==idx1)
+                {
+                    idx = Math.floor(Math.random() * lunch.length)
+                }
+
+                idx1 = idx
+
+                mylunch.src = lunch[idx].사진
+                result.textContent = lunch[idx].이름
+                // result.textContent = lunch[idx]['이름']
+                console.log(idx)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>오늘의 점심은?</h1>
+    <button></button>
+    <img src="" alt="">
+    <h1 id="result"></h1>
+
+</body>
+
+</html>
