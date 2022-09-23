@@ -28,10 +28,10 @@
         //광현이형 거
         //변수에 함수를 집어넣음
         //이 변수 안에 있는 함수를 호출하려면
-        let cockroach = document.createElement('img')
-        cockroach.src = 'https://en.pimg.jp/066/723/285/1/66723285.jpg'
-        cockroach.innerHTML=`<img src=${'mars.png'}>`
-        //
+        // let cockroach = document.createElement('img')
+        // cockroach.src = 'https://en.pimg.jp/066/723/285/1/66723285.jpg'
+        // cockroach.innerHTML=`<img src=${'mars.png'}>`
+        // //
 
         let randomAlphabet = (
             function () 
@@ -57,7 +57,7 @@
         let randomImg = (
             function () 
             {
-                let img = ['earth.png','mars.png','nightsky.jpg','sun.png']
+                let img = ['재형.png','민형.png','서준.png']
                 return function () {
                     return img[nextRandomInteger(img.length - 1)]
                 }
@@ -70,12 +70,14 @@
             return Math.random()*maxSpeed-
             Math.random()*maxSpeed
         }
-        let canvasWidth=700
-        let canvasHeight=400
+        let canvasWidth=1400
+        let canvasHeight=800
 
 
 
         //객체 만드는것(x,y,vx,vy,text,move함수)
+
+
         // function MovingText()
         // {
         //     //최소0 최대 canvasWidth(canvasHeight)값
@@ -109,12 +111,8 @@
            this.vx=randomSpeed(10)
            this.vy=randomSpeed(10)
            this.text = document.createElement('img')
-           this.text.style.src=randomImg()
-           
 
-        //    this.text.style.color=randomColor()
-               
-        
+           this.text.src=randomImg()
            
            this.text.style.position='fixed'
            document.body.appendChild(this.text)
