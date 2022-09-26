@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <input type="text" id="num"><br><br>
+    <button id="lot">로또생성</button><br><br>
+    <button id="lot2">로또2생성</button>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+        }
+
+        document.querySelector('#lot').onclick = () => {
+            document.querySelectorAll('h1').forEach(
+                (lotto) => { lotto.remove() }
+            )
+            aa = document.querySelector('#num').value
+            let lotto = []
+            for (let i = 0; i < 6; i++) {
+                let num = getRandomInt(aa,46)
+                for (let j in lotto) {
+                    if (num == lotto[j]) {
+                        num = getRandomInt(aa,46)
+                    }
+                }
+                lotto.push(num);
+            }
+            lotto.sort(function (a, b) {
+                return a - b;
+            })
+            let bonus = getRandomInt(aa,46)
+            for (let j in lotto) {
+                if (bonus == lotto[j]) {
+                    bonus = getRandomInt(aa,46)
+                }
+            }
+
+            this.text = document.createElement('h1')
+            this.text.textContent = '로또번호: ' + lotto
+
+            this.text2 = document.createElement('h1')
+            this.text2.textContent = '보너스: ' + bonus
+
+            document.body.appendChild(this.text)
+            document.body.appendChild(this.text2)
+        }
+
+        document.querySelector('#lot2').onclick = () => {
+            document.querySelectorAll('h1').forEach(
+                (lotto) => { lotto.remove() }
+            )
+            nansu = getRandomInt(1,46)
+            while(nansu>38)
+            {
+            alert('다시뽑아주세요')
+            nansu = getRandomInt(1,46)
+            }
+            this.text1 = document.createElement('h1')
+            this.text1.textContent = '난수: ' + nansu
+            document.body.appendChild(this.text1)
+
+            aa = document.querySelector('#num').value
+            let lotto = []
+            for (let i = 0; i < 6; i++) {
+                let num = getRandomInt(nansu,46)
+                for (let j in lotto) {
+                    if (num == lotto[j]) {
+                        num = getRandomInt(nansu,46)
+                    }
+                }
+                lotto.push(num);
+            }
+            lotto.sort(function (a, b) {
+                return a - b;
+            })
+            let bonus = getRandomInt(nansu,46)
+            for (let j in lotto) {
+                if (bonus == lotto[j]) {
+                    bonus = getRandomInt(nansu,46)
+                }
+            }
+
+            this.text = document.createElement('h1')
+            this.text.textContent = '로또번호: ' + lotto
+
+            this.text2 = document.createElement('h1')
+            this.text2.textContent = '보너스: ' + bonus
+
+            document.body.appendChild(this.text)
+            document.body.appendChild(this.text2)
+        }
+
+    </script>
+</body>
+
+</html>
