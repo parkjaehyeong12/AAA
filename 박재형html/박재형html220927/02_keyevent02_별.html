@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            document.querySelector('h1').style.color = 'red'
+            // document.querySelector('h1').style.
+
+            //1.position을 fixed로 하기
+            const star = document.querySelector('h1')
+            star.style.position = 'fixed'
+            let[x, y] = [0, 0] //x,y라는 변수에 각각 0 대입
+            const block = 20
+            const print = function () {
+                star.style.left = `${x * block}px`
+                star.style.top = `${y * block}px`
+            }
+            print() //별을 딱 0,0에 위치시키겠다
+            //2.키이벤트 받기
+
+            const [left, up, right, down] = [37, 38, 39, 40]
+            document.body.addEventListener('keydown',
+                function (event) {
+                    switch (event.keyCode) {
+                        case left: //37
+                            if (x <= 0)
+                                break
+                            x -= 1
+                            break
+                        case up:
+                            if (y <= -2)
+                                break
+                            y -= 1
+                            break
+                        case right:
+                            x += 1
+                            break
+                        case down:
+                            y += 1
+                            break
+                    }
+                    print()
+                })
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
+        <img src="재형.png" alt="">
+    </h1>
+    
+</body>
+
+</html>

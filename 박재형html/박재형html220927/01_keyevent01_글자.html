@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 조건에 따라서 class 값을 다르게 줘보기 */
+        .red{background-color: pink;}
+        .black{background-color: gainsboro;}
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    
+    <script>
+        const mytextarea=document.querySelector('textarea')
+        const myh1= document.querySelector('h1')
+
+        // keyup 눌렀다 올라올때 카운트
+        // keydown 누를때 카운트
+        mytextarea.addEventListener('keyup',
+        function(){
+            const mylength = mytextarea.value.length
+            myh1.textContent=`글자수: ${mylength}`
+            
+            if(mylength>10)
+            {
+                myh1.style.color='yellow'
+                myh1.setAttribute('class','red')
+            }
+            else
+            {
+                myh1.style.color='black'
+                myh1.setAttribute('class','black')
+            }
+            
+        })
+    </script>
+</body>
+
+</html>

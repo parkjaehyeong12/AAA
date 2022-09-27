@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        #answer,
+        #submit,
+        #cancel {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        #input {
+            position: fixed;
+            top: 50px;
+            left: 150px;
+        }
+
+        #time {
+            position: fixed;
+            top: 50px;
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height:60px;">
+        <h1 id="output" style="margin-left:170px"></h1>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+
+    </div>
+
+    <div style="margin-bottom: 20px;">
+
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+        <button class="choiceValue"></button>
+
+    </div>
+
+    <button id="cancel" style="margin-left:20px">취소</button>
+    <button id="submit" style="margin-left:20px">제출</button>
+
+    <div style="height:60px">
+        <h3 id="input" style="margin-left:170px"></h3>
+        <h5 id="time"></h5>
+    </div>
+
+    <button id="answer">
+        정답은?
+    </button>
+
+    <script>
+        //정답을 먼저 생성
+        let output = ''
+        let array = []
+        let input = 0
+        do {
+            input = Math.floor(Math.random() * 10)//0~9
+            const idx = array.indexOf(input)
+            if (idx == -1) {
+                array.push(input)
+                output += input
+            }
+        } while (array.length < 3);
+        //정답생성하는 파트
+
+        let cancel = document.querySelector('#cancel')
+        let submit = document.querySelector('#submit')
+
+        let h1output = document.getElementById('output')
+        let h3input = document.getElementById('input')
+
+        let answer = document.getElementById('answer')
+        let time = document.getElementById('time')
+
+        let count = 0
+        let timecount = 0
+
+        let timeCountInterval = setInterval(
+            function () {
+                timecount++
+                time.innerText = parseInt(timecount / 3600) + '시'
+                    + parseInt((timecount % 3600) / 60) + '분' + timecount % 60 + '초'
+
+            }, 100);
+
+        let buttons = document.getElementsByClassName('choiceValue')
+        //document.querySelectorAll('.choiceValue')
+
+        //버튼 위의 글자 적기
+        for (let i = 0; i < buttons.length; i++)
+            buttons[i].textContent = i
+
+        //버튼 눌렀을 때, 글자 나타나게 하기
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click',
+                function () {
+                    //i 값이 이 안에 이미 있다며 실행 안함
+                    if (h1output.innerHTML.includes(i) == false) {
+                        //길이가 3이상이면 실행 안 함
+                        if (h1output.innerHTML.length < 3)
+                            h1output.innerHTML += i
+                    }
+                })
+        }
+
+        //정답 맞췄거나 끝까지 못 맞춰서 새로운 답을 내야 하는 경우
+        function shuffleNewNumber() {
+            //버튼들에 적용된 스타일들을 해지
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].style.color = ''
+                buttons[i].style.disabled = false
+            }
+            array = []
+            input = 0
+            output = ''
+
+            do {
+                input = Math.floor(Math.random() * 10)//0~9
+                const idx = array.indexof(input)
+                if (idx == -1) {
+                    array.push(input)
+                    output += input
+                }
+            } while (array.length < 3);
+        }
+
+        cancel.addEventListener('click',
+            function () {
+                h1output.innerHTML = ''
+                answer.innerHTML = '정답은?'
+            })
+        answer.addEventListener('click', function () {
+            this.innerHTML = '정답은 ' + output
+        })
+
+        h3 = document.querySelector('h3')
+
+
+
+
+
+        submit.addEventListener('click', function () {
+            if (h1output.innerHTML.length != 3) {
+                alert("3글자를 입력하세요")
+                return
+            }
+            count++ //시도횟수
+            if (output == h1output.innerHTML) {
+                count = 0
+                alert('정답!')
+                if (timecount < 100)
+                    alert("천재")
+                else
+                    alert('보통')
+                h3input.innerHTML = ''
+                shuffleNewNumber()
+                h1output.innerHTML = ''
+                answer.innerHTML = '정답은?'
+                timecount = 0
+                //타이머 리셋
+                clearInterval(timeCountInterval)
+                timeCountInterval = setInterval(function () {
+                    timecount++
+                    time.innerHTML = timecount
+                }, 100)
+            }
+            else if (output != h1output.innerHTML) {
+                count++
+                let s = 0
+                let b = 0
+                let out = 0            
+                for (let i = 0; i < 3; i++) {
+                    if (output.indexOf(h1output.innerHTML[i])==-1) {
+                       out++;    
+                    }
+                    else if(output.indexOf(h1output.innerHTML[i])==i){
+                        s++;
+                    }
+                    else{
+                    b++;
+                    }
+                }
+
+                if (out<3) {
+                    h3.innerHTML += '[' + h1output.innerHTML + ']' + s + 's' + b + 'b'+'<br>'
+                }
+                else
+                   h3.innerHTML += 'out' +'<br>'
+                
+
+                
+
+
+               if(count==9){
+                 alert('모두 틀렸어요 ,정답은 ' + output+'입니다.')
+                 
+                 count=0
+                 h3input.innerHTML = ''
+                shuffleNewNumber()
+                h1output.innerHTML = ''
+                answer.innerHTML = '정답은?'
+                timecount = 0
+                //타이머 리셋
+                clearInterval(timeCountInterval)
+                timeCountInterval = setInterval(function () {
+                    timecount++
+                    time.innerHTML = timecount
+                }, 100)
+               }
+              
+                   
+
+
+            } h1output.innerHTML = ''
+        })
+
+
+    </script>
+</body>
+
+</html>
