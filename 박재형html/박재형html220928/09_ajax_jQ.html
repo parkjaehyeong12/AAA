@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq.js"></script>
+</head>
+<body>
+    <h1>재형이는 이정도 가치가 있어요</h1>
+    <script> //자바스크립트에서 ajax는 객체를 매개변수로 받는다.
+        $.ajax(
+            {
+                url:'https://dongjoonleedj.github.io/testWebHosting/myjson.json',
+                dataType:'json',
+                success:function(data){
+                    //jQuery로 태그 만드는 법 (createElement)
+                    let result = $('<h1></h1>')
+                    result.text('가격은 '+data.price+'입니다. '+
+                    '그리고 담당자는 '+data.Name+'입니다.')
+                    $('body').append(result)
+                },
+                error:function(r,s,e){
+                    alert('error!!!')
+                }
+            }
+        )
+    </script>
+</body>
+</html>
