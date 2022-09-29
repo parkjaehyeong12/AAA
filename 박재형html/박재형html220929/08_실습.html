@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const name= prompt('(●\'◡\'●)(☞ﾟヮﾟ)☞이름을 입력하세요☜(ﾟヮﾟ☜)(❁´◡`❁)')
+        let imageUrl
+
+        if(name=='박재형')
+        {
+            imageUrl = 'https://img.lovepik.com/photo/20211118/medium/lovepik-pattaya-summer-scenery-picture_500101977.jpg'
+        }
+        else if(name=='도광현')
+        {
+            imageUrl='https://t1.daumcdn.net/cfile/tistory/260DF53B57490D2B0E'
+
+        }
+        else
+        imageUrl='https://post-phinf.pstatic.net/MjAxODAzMjFfMjc3/MDAxNTIxNTk1OTg0NzQz.Z10wd_dG_KlMy8WUBucw1vhL9vqbdy1x5E6jomL0FHUg.WXYnMCs6d8Ae7uFxbyFORZb2rLqviAUHbtAhniBh-nkg.JPEG/1_%281%29.jpg?type=w1200'
+        // alt z
+        const component =
+            <div>
+                <h1>리액트 시작({name})</h1>
+                
+                <img src={imageUrl}/>
+                
+
+
+
+
+            </div>
+
+
+
+        const container = document.getElementById('root')
+        ReactDOM.render(component, container)
+
+    </script>
+</body>
+
+</html>

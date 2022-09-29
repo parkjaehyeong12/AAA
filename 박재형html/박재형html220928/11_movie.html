@@ -17,7 +17,7 @@
     </div>
     <script>
         $(function(){
-            const key = "43acf2413769000d8f1218245a94a6ba"
+            const key = "3ee347f2d68d2ad98c23a585942d5fc8"
             const url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
             const apiurl = `${url}?key=${key}&targetDt=20190505`
             console.log(apiurl)
@@ -35,7 +35,7 @@
                         const jsonObj = result
                         const boxOfficeResult 
                         = jsonObj['boxOfficeResult'] //boxOfficeResult 속성
-                        const movieList 
+                        const movieList
                         = boxOfficeResult['dailyBoxOfficeList']
 
                         boxOfficeType.text(boxOfficeResult['boxofficeType'])
