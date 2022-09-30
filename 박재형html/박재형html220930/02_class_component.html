@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //Student 객체의 name,age와 같은 것들
+        //props =properties(속성)
+        class MyApp extends React.Component {
+            render(){
+                return <div>
+                    <h1>{this.props.name}</h1>
+                    <img src={this.props.imgUrl}/>
+                    </div>
+            }
+        }
+        const container = document.getElementById('root')
+        ReactDOM.render(<MyApp name ='이동준'
+         imgUrl='http://www.aptn.co.kr/news/photo/201805/59254_16926_2519.png'/>, container)
+    </script>
+</body>
+</html>

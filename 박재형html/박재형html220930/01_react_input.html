@@ -15,30 +15,32 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        let name = prompt('이름이 뭐에요')
 
-        const name= prompt('(●\'◡\'●)(☞ﾟヮﾟ)☞이름을 입력하세요☜(ﾟヮﾟ☜)(❁´◡`❁)')
         let imageUrl
+        
+        let component
 
-        if(name=='박재형')
+        if(name=='개')
         {
-            imageUrl = 'https://img.lovepik.com/photo/20211118/medium/lovepik-pattaya-summer-scenery-picture_500101977.jpg'
+            imageUrl='https://mblogthumb-phinf.pstatic.net/MjAxOTEwMjZfNzkg/MDAxNTcyMDkyNjM2NjIw.6KtvWoIJKLEMfAOobzJk8HPi02Os3AXNEjWaUCYjZV0g.hWHuBs02RASsTflewS8lCuctm1Xh4qrnKOmBuW-F_e4g.JPEG.charmed__/1572092635544.jpg?type=w800'
         }
-        else if(name=='도광현')
+        else if(name=='토끼')
         {
-            imageUrl='https://t1.daumcdn.net/cfile/tistory/260DF53B57490D2B0E'
-
+            imageUrl='https://mblogthumb-phinf.pstatic.net/MjAxODA4MjlfMzUg/MDAxNTM1NTA5OTQ1NjY5.aZf6k9FXHp2Hs1WobXccbC9i2lv49P09CmqGCIsK4Vcg.Bn76ZrRmvjoBNpOC4ppvM6lscit14Fw7KyWawBcOADkg.PNG.thisme73/%ED%9D%B0%ED%86%A0%EB%81%BC.png?type=w800'
         }
         else
-        imageUrl='https://post-phinf.pstatic.net/MjAxODAzMjFfMjc3/MDAxNTIxNTk1OTg0NzQz.Z10wd_dG_KlMy8WUBucw1vhL9vqbdy1x5E6jomL0FHUg.WXYnMCs6d8Ae7uFxbyFORZb2rLqviAUHbtAhniBh-nkg.JPEG/1_%281%29.jpg?type=w1200'
-        // alt z
-        const component =
-            <div>
+        {
+            imageUrl='https://ichef.bbci.co.uk/news/640/cpsprodpb/9579/live/a18871d0-1279-11ed-894d-e96102bbb308.jpg'
+        }
+
+        component = <div>
                 <h1>리액트 시작({name})</h1>
-                
                 <img src={imageUrl}/>
             </div>
 
         const container = document.getElementById('root')
+        
         ReactDOM.render(component, container)
 
     </script>
