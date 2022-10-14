@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Oct 14 16:22:40 KST 2022
+org.eclipse.jst.jee.server\:HelloJSP02=D\:\\javadevlop\\apache-tomcat-8.5.73\\wtpwebapps\\HelloJSP02
+org.eclipse.jst.jee.server\:MyJSP=D\:\\javadevlop\\apache-tomcat-8.5.73\\wtpwebapps\\MyJSP

@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="CheckInfo">
+	 	<label for="name">이름:</label>
+	 	<input id="name" name="name"><br>
+	 	<label for="name">나이:</label>
+	 	<input id="age" name="age"><br>
+	 	<label for="id">ID:</label>
+	 	<input id="id" name="id"><br>
+	 	
+	</form>
+</body>
+</html>

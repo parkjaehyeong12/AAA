@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="requestParam.jsp">
+		<label for="name">이름</label>
+		<input type="text" id="name" name ="name"><br>
+		<label for="pw">비밀번호</label>
+		<input type="text" id="pw" name ="pw"><br>
+		<p>취미</p>
+		<label for="cook">요리</label>
+		<input type="checkbox" name="hobby" value="cook" id="cook"><br>
+		<label for="cook">달리기</label>
+		<input type="checkbox" name="hobby" value="run" id="run"><br>
+		<label for="cook">수영</label>
+		<input type="checkbox" name="hobby" value="swim" id="swim"><br>
+		<label for="cook">잠자기</label>
+		<input type="checkbox" name="hobby" value="sleep" id="sleep"><br>
+		
+		
+	</form>
+</body>
+</html>
