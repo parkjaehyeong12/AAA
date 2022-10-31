@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop">
+<!-- useGeneratedKeys="true" keyProperty="shop_id"
+자동증가시 쓰이는 조합 -->
+
+<!-- title,category,price = 파라메터 -->
+<!-- title, category, price : 키 -->
+<!-- #{title} 등 : 그 파라메터의 값(=value) -->
+<insert id="insert" parameterType="hashMap" useGeneratedKeys="true" keyProperty="shop_id">  
+    <![CDATA[
+    insert into customer
+    (title, category, price) 
+    values
+    (#{title}, #{category}, #{price})
+    ]]>
+</insert>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
